@@ -1,0 +1,172 @@
+Q1. WAP to fond out whether the number is palindrome or not. 
+
+Ans. 
+public class Palindrome {
+
+	public static void main(String args[]) 
+	{ 
+	String inputString="123"; 
+	String reverseString=""; 
+	int length=inputString.length(); 
+	for(int i=0;i<length-1;i++){ 
+	reverseString = reverseString + inputString.charAt(i) ;
+	}
+	if(reverseString.equals(inputString)){ 
+		System.out.println("Input Number is Palindrome") ;
+		} 
+		else{ 
+		System.out.println("Input Number is not Palindrome") ;
+		} 
+		}
+
+}
+
+
+
+
+
+Q2.WAP to find out whether the number is Armstrong number or not 
+
+Ans. 
+
+public  class Armstrong{ 
+public static void main(String args[]){ 
+int c=0,temp,a; 
+int n=153; 
+while(n>0){ 
+a=n%10; 
+n=n/10; 
+c=c+(a*a*a); 
+if(temp==c){ 
+System.out.println(“Armstrong Number”); 
+} 
+else{ 
+System.out.println(“Number is Not Armstrong”); 
+} 
+} 
+} 
+} 
+
+Q3.WAP to print various pyramids and shapes. 
+
+Q4.WAP to print fibonacci series. 
+
+Ans.public class FibonacciSeries{ 
+int n1=0,n2=1,n3,i,count=10; 
+System.out.println(+n1+” ” +n2); 
+for(i=0;i<count.i++){ 
+n3=n1+n2; 
+System.out.println(+n3); 
+n1=n2; 
+n2=n3; 
+} 
+} 
+
+Q5. WAP to convert decimal to binary and vice versa. 
+
+Ans. 
+
+Q6 .WAP to print various sorting algo. 
+
+Q7.WAP swap numbers without using third variable. 
+Ans. 
+
+public class Palindrome {
+	public static void main(String args[]){ 
+		int a =5; 
+		int b=10; 
+		System.out.println("Before Swap a is "+a+" b is "+b); 
+		a=a+b; 
+		b=a-b; 
+		a=a-b; 
+		System.out.println("Before Swap a is "+a+" b is "+b); 
+		}
+
+}
+
+
+
+Q8. WAP for binary and sequential search. 
+Q9. WAP to find out quadratic equation. WAP to perform matrix multiplication. 
+
+Ans. 
+public class MatrixMultiply {
+	public static void main(String args[]) 
+	{
+
+
+		int n=3; 
+		int[][] m1={ 
+				{1,2,3}, 
+				{4,5,6}, 
+				{7,8,9} 
+		}; 
+		int[][] m2={ 
+				{10,12,13}, 
+				{14,15,16}, 
+				{17,18,19} 
+		}; 
+		int[][] result=new int[n][n]; 
+		for(int i=0;i<n;i++){ 
+			for(int j=0;j<n;j++){ 
+				for(int k=0;k<n;k++){ 
+					result[i][j]=result[i][j] +m1[i][j] + m2[i][j]; 
+				} 
+			} 
+		} 
+		System.out.println("the matrix is"); 
+		for(int i=0;i<n;i++){ 
+			for(int j=0;j<n;j++){ 
+				System.out.println(+result[i][j]+" " ); 
+			} 
+			System.out.println(); 
+		}
+
+	}
+
+}
+
+
+Q10. WAP to decide bonus salary of an employee based on number of years of experience. 
+Ans.  
+public class SalaryBonusCalculator{ 
+public static void main(String args[]){ 
+double salary=20000.0; 
+double yearsOfExp=2.5; 
+double bonus=calculateBonus(salary,yearsOfExp); 
+System.out.println(“Bonus of Employee is : “+bonus); 
+} 
+
+private static double calculateBonus(double salary,double yearsOfExp){ 
+double bonus=0.0; 
+if(yearsOfExp>0 && yearsOfExp<2){ 
+bonus=(salary*50)/100; 
+} 
+else if(yearsOfExp>2 && yearsOfExp<3){ 
+bonus=(salary*40)/100; 
+} 
+else if(yearsOfExp>3 && yearsOfExp<4){ 
+bonus=(salary*30)/100; 
+} 
+else if(yearsOfExp>4){ 
+bonus=(salary*20)/100; 
+} 
+return bonus; 
+} 
+} 
+
+Q11. WAP to print odd and even numbers in a given range. 
+
+Ans. public class OddAndEvenNumbers{ 
+public static void main(String args[]){ 
+int m[]={1,2,3,4,5}; 
+for(int i=0;i<m.length();i++){ 
+if(m[i]%2 == 0){ 
+System.out.println(“Number “+m[i]+ “is even”); 
+} 
+else{ 
+System.out.println(“Number “+m[i]+ “is even”); 
+} 
+} 
+} 
+} 

@@ -1,0 +1,22 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+   http://www.springframework.org/schema/beans     
+   http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<bean id="address" class="com.cg.project.bean.Address">
+		<property name="city" value="Chennai" />
+		<property name="state" value="TamilNadu" />
+		<property name="pinCode" value="600045" />
+		<property name="country" value="India" />
+	</bean>
+	<bean id="associate" class="com.cg.project.bean.Associate">
+		<property name="associateId" value="111" />
+		<property name="firstName" value="alamelmangai" />
+		<property name="lastName" value="gopalan" />
+		<property name="address" ref="address" />
+	</bean>
+</beans>

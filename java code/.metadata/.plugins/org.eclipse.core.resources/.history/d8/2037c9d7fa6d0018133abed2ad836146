@@ -1,0 +1,109 @@
+package com.cg.project;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import com.cg.project.beans.RegistrationPage;
+
+
+
+public class RegistrationPageTest {
+
+	static WebDriver driver;
+	private RegistrationPage regPage;
+
+	@BeforeClass
+	public static void setUpDriverEnv() {
+		System.setProperty("webdriver.chrome.driver","D:\\chromedriver.exe");	
+		driver= new ChromeDriver();
+		driver.manage().window().maximize();
+	}
+
+	@Before
+	public void setUptestEnv() {
+		driver.get("https://github.com/");
+		regPage=new RegistrationPage();
+		PageFactory.initElements(driver, regPage);
+	}
+
+
+	@Test
+	public void testForBlankUserNameAndPassword() {
+		regPage.setUsername("");
+		regPage.setPassword("");
+		regPage.clickSubmitButton();
+		String actualErrorMessage=driver.findElement(By.xpath("//div[@class='container']")).getText();
+		System.out.println("error Message:-"+actualErrorMessage);
+		String message="Incorrect username or password.";
+		assertEquals(actualErrorMessage, message);
+
+	}
+	@Test
+	public void testForInValidUserNameAndValidPassword(){
+		regPage.setUsername(getInvalidUsername());
+		regPage.setPassword(getValidPassword());
+		regPage.clickSubmitButton();
+		String actualErrorMessage=driver.findElement(By.xpath("//div[@class='container']")).getText();
+		System.out.println("error Message:-" +actualErrorMessage);
+		String message="Incorrect username or password.";
+		assertEquals(actualErrorMessage, message);
+	}
+	@Test
+	public void testForValidUserNameAndInValidPassword(){
+		regPage.setUsername( getValidUsername());
+		regPage.setPassword(getInvalidPassword());
+		regPage.clickSubmitButton();
+		String actualErrorMessage=driver.findElement(By.xpath("//div[@class='container']")).getText();
+		System.out.println("error Message:-" +actualErrorMessage);
+		String message="Incorrect username or password.";
+		assertEquals(actualErrorMessage, message);
+	}
+	@Test
+	public void testForInValidUserNameAndInValidPassword(){
+		regPage.setUsername(getInvalidUsername());
+		regPage.setPassword(getInvalidPassword());
+		regPage.clickSubmitButton();
+		String actualErrorMessage=driver.findElement(By.xpath("//div[@class='container']")).getText();
+		System.out.println("error Message:-" +actualErrorMessage);
+		String message="Incorrect username or password.";
+		assertEquals(actualErrorMessage, message);
+	}
+	@Test
+	public void testForValidUserNameAndPassword() {
+		regPage.setUsername(getValidUsername());
+		regPage.setPassword(getValidPassword());
+		regPage.clickSubmitButton();
+	}
+	private String getValidPassword(){
+		return "Chinnu@2";
+	}
+	private String getValidUsername(){
+		return "alamelmangai25";
+	}
+	private String getInvalidPassword(){
+		return "xyz";
+	}
+	private String getInvalidUsername(){
+		return "xyz";
+	}
+	@After
+	public  void tearDownTestEnv(){
+		regPage=null;
+	}
+	@AfterClass
+	public static void tearDownDriverEnv() {
+		driver.close();
+		driver=null;
+
+	}
+}

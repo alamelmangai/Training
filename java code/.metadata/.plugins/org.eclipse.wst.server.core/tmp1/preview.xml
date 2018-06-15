@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<server port="8080">
+  <module context="HFJ-1" name="HFJ-1" path="D:/java code/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/HFJ-1" type="static"/>
+  <module context="HFJ-3" name="HFJ-3" path="D:/java code/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/HFJ-3" type="static"/>
+  <module context="HFJ-4" name="HFJ-4" path="D:/java code/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/HFJ-4" type="static"/>
+</server>

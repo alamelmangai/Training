@@ -1,0 +1,12 @@
+                        public class MainClass3{
+                             public static void main(String[] str){
+                             int[] r = new int[11];
+			     for(int i=1;i<=10;i++){
+					for(int j=0;j<=9;j++){
+						r[i] = (10*j)+i;
+						System.out.print(r[i]+" ");
+						}
+					System.out.println();
+					}
+				}
+			}

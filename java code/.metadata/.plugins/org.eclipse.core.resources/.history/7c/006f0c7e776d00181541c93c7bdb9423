@@ -1,0 +1,101 @@
+package com.cg.project;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import com.cg.project.beans.LoginPage;
+
+public class LoginPageTest {
+	WebDriver driver=new ChromeDriver();
+	LoginPage loginPage;
+	@BeforeClass
+	public void setUpBeforeClass() throws Exception {
+		System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
+		driver.manage().window().maximize();
+	}
+
+	
+
+	@Before
+	public void setUp() throws Exception {
+		driver.get("https://github.com/");
+		loginPage=new LoginPage();
+		PageFactory.initElements(driver, loginPage);
+		
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		driver=null;
+		loginPage=null;
+	}
+
+	@AfterClass
+	public void tearDownAfterClass() throws Exception {
+		driver.close();
+	}
+	
+	@Test
+	public void testForBlankUserNameAndPassword() {
+		loginPage.setUsername("");
+		loginPage.setPassword("");
+		loginPage.clickSubmitButton();
+		String actualErrorMessage=driver.findElement(By.xpath("//div[@class='container']")).getText();
+		System.out.println("Error Message :-"+actualErrorMessage);
+		String expectedErrorMessage="Incorrect username or password.";
+		Assert.assertEquals(expectedErrorMessage, actualErrorMessage);
+	}
+	
+	@Test
+	public void testForWrongPassword() {
+		loginPage.setUsername("crossdeepak");
+		loginPage.setPassword("dasddf");
+		loginPage.clickSubmitButton();
+		String actualErrorMessage=driver.findElement(By.xpath("//div[@class='container']")).getText();
+		System.out.println("Error Message :-"+actualErrorMessage);
+		String expectedErrorMessage="Incorrect username or password.";
+		Assert.assertEquals(expectedErrorMessage, actualErrorMessage);
+	}
+	
+	@Test
+	public void testForWrongUserName() {
+		loginPage.setUsername("cross");
+		loginPage.setPassword("cvsvsd");
+		loginPage.clickSubmitButton();
+		String actualErrorMessage=driver.findElement(By.xpath("//div[@class='container']")).getText();
+		System.out.println("Error Message :-"+actualErrorMessage);
+		String expectedErrorMessage="Incorrect username or password.";
+		Assert.assertEquals(expectedErrorMessage, actualErrorMessage);
+	}
+	
+	@Test
+	public void testForWrongUserNameAndPassword() {
+		loginPage.setUsername("vweca");
+		loginPage.setPassword("vreb");
+		loginPage.clickSubmitButton();
+		String actualErrorMessage=driver.findElement(By.xpath("//div[@class='container']")).getText();
+		System.out.println("Error Message :-"+actualErrorMessage);
+		String expectedErrorMessage="Incorrect username or password.";
+		Assert.assertEquals(expectedErrorMessage, actualErrorMessage);
+	}
+	@Test
+	
+	public void testForCorrectUserNameAndPassword() {
+		loginPage.setUsername("crossdeepak");
+		loginPage.setPassword("");
+		loginPage.clickSubmitButton();
+		String actualErrorMessage=driver.findElement(By.xpath("//div[@class='container']")).getText();
+		System.out.println("Error Message :-"+actualErrorMessage);
+		String expectedErrorMessage="Incorrect username or password.";
+		Assert.assertEquals(expectedErrorMessage, actualErrorMessage);
+	}
+
+}

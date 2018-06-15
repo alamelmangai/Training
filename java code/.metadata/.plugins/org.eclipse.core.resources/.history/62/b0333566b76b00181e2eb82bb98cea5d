@@ -1,0 +1,5 @@
+package com.cg;
+@RunWith
+public class RunCucumberTests {
+
+}

@@ -1,0 +1,64 @@
+To install 
+3) Type name as you wish, lets take “TestNG” and type “http://beust.com/eclipse/” as location. Click OK3) Type name as you wish, lets take “TestNG” and type “http://beust.com/eclipse/” as location. Click OK
+
+
+
+1)To start Hub
+
+java -jar selenium-server-standalone-3.11.0.jar -role hub
+
+-------------------------------------------------------------------------------------------------------
+2)To start Node 
+
+
+for  Chrome
+
+java -D"webdriver.chrome.driver"=D:\SatishTrainingData\TrainingsTopicsWise\SeleniumAndWebDriver\ChromeDriver\chromedriver.exe -jar selenium-server-standalone-3.11.0.jar -role node  -hub http://10.102.54.215:4444/grid/register/ -port 5566
+
+
+java -D"webdriver.chrome.driver"=D:\Milind\software\chromedriver_win32\chromedriver.exe -jar selenium-server-standalone-3.11.0.jar -role node  -hub http://10.102.54.199:4444/grid/register/ -port 5566 
+
+
+
+.jetty9.util.log.StdErrLog
+14:08:40.456 INFO [Hub.start] - Selenium Grid hub is up and running
+14:08:40.456 INFO [Hub.start] - Nodes should register to http://10.102.54.215:44
+44/grid/register/
+14:08:40.456 INFO [Hub.start] - Clients should connect to http://10.102.54.215:4
+444/wd/hub
+
+
+
+for FireFox
+
+java -D"webdriver.gecko.driver"=D:\SatishTrainingData\TrainingsTopicsWise\SeleniumAndWebDriver\FireFoxDriver\geckodriver.exe -jar selenium-server-standalone-3.11.0.jar -role node  -hub http://10.103.2.121:4444/grid/register/ -port 5567 
+
+java -D"webdriver.gecko.driver"=D:\Milind\software\chromedriver_win32\\geckodriver.exe -jar selenium-server-standalone-3.11.0.jar -role node  -hub http://10.102.54.215:4444/grid/register/ -port 5567 
+
+
+
+
+
+
+-->>for firefox 
+java -jar selenium-server-standalone-3.11.0.jar -role node -hub http://10.103.2.121:4444/grid/register/ -port 5566 -browser browserName=fireFox
+
+-->>for chrome
+java -jar selenium-server-standalone-3.11.0.jar -role node -hub http://10.103.2.121:4444/grid/register/ -port 5566 -browser browserName=chrome
+
+
+-->for maxInstance 
+java -jar selenium-server-standalone-3.11.0.jar -role node -hub http://10.102.52.238:4444/grid/register/ -port 5566 -browser browserName=chrome
+-maxInstance=3
+
+-->> for maxSession
+java -jar selenium-server-standalone-3.11.0.jar -role node -hub http://10.102.52.238:4444/grid/register/ -port 5566 -browser browserName=chrome
+–maxSession 3
+
+
+-----------------------------------------------------------------------------------------------------
+command to check how many nodes are connected
+
+http://localhost:4444/grid/console
+
+"http://10.102.52.238:4444/wd/hub";

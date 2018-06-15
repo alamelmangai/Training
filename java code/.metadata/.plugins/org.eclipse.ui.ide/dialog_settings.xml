@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="D:\java code\MathProject"/>
+		<item value="D:\Users\algopala\Desktop\PayrollJDBC"/>
+		<item value="D:\Users\algopala\Desktop\CGBankingSystem430"/>
+		<item value="D:\java code\CGBankingSystemCollection"/>
+		<item value="D:\java code\CGBankingSystem (2)"/>
+		<item value="D:\java code\CGPayrollSystem"/>
+		<item value="D:\Users\algopala\Desktop\java code"/>
+		<item value="D:\Users\algopala\Desktop\CGPayrollSystem"/>
+		<item value="D:\Users\algopala\Desktop\project"/>
+	</list>
+	<section name="CleanDialogSettings">
+		<item value="500" key="DIALOG_WIDTH"/>
+		<item value="true" key="TOGGLE_SELECTED"/>
+		<item value="377" key="DIALOG_HEIGHT"/>
+		<item value="433" key="DIALOG_X_ORIGIN"/>
+		<item value="113" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item value="true" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="true" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value=""/>
+			<item value="D:\java code\SeleniumParallelTest"/>
+			<item value="D:\java code\GitHubRegistrationTest"/>
+			<item value="D:\java code\GitHubTest"/>
+			<item value="D:\java code\WebDriverLoginPage"/>
+			<item value="D:\java code\WebDriverDemoRE"/>
+			<item value="D:\java code\CGPayrollSpringMVCDataJPA Validation"/>
+			<item value="D:\java code\CGMobilebillingSystemSpringDataJPA"/>
+			<item value="D:\java code\BankingWithSpringDataJPA"/>
+			<item value="D:\java code\CGPayrollSystemSpringDataJPA"/>
+			<item value="D:\java code\BankingWithSpringJpa"/>
+			<item value="D:\java code\CGPayrollSystemWithSprinJPA"/>
+			<item value="D:\java code\CollectionBanking"/>
+			<item value="D:\java code\CollectionBankingHibernate"/>
+			<item value="D:\java code\HibernateExample"/>
+			<item value="D:\java code\CGPayrollSystemWithHibernate"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="D:\java code\spring-cucumber.zip"/>
+			<item value="D:\java code\WithJSON.zip"/>
+			<item value="D:\java code\js-demos.zip"/>
+			<item value=""/>
+		</list>
+	</section>
+	<section name="ResourceNavigator">
+		<item value="Aggregate for window 1523527576666" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
+		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="381" key="DIALOG_X_ORIGIN"/>
+		<item value="185" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

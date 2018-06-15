@@ -1,0 +1,1 @@
+java -D"webdriver.chrome.driver"=D:\chromedriver.exe -jar selenium-server-standalone-3.12.0.jar -role node  -hub http://10.102.52.204:4455/grid/register/ -port 5569

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>registrationPage</title>
+</head>
+<body>
+	<div align='center'>
+		<h2>RegistrationPage</h2>
+		<form name='RegistrationForm' action="Registration1Servlet"
+			method='post'>
+			<table>
+				<tr>
+					<td>UserName:</td>
+					<td><input type="text" name="userName"></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" name="password"></td>
+				</tr>
+				<tr>
+					<td>Re-Enter Password:</td>
+					<td><input type="password" name="rPassword"></td>
+				<tr>
+					<td>First name:</td>
+					<td><input type="text" name="firstName"></td>
+				</tr>
+				<tr>
+					<td>Last name:</td>
+					<td><input type="text" name="lastName"></td>
+				<tr>
+					<td>Gender:</td>
+					<td><input type="radio" name="gender" value="male">Male<br>
+						<input type="radio" name="gender" value="female">Female<br>
+						<input type="radio" name="gender" value="other">Other</td>
+				</tr>
+				<tr>
+					<td>Address:</td>
+					<td><input type="text" name="address"><br></td>
+				</tr>
+				<tr>
+					<td>Communication Mode:</td>
+					<td>
+						<input type="checkbox" name="communicationMode" value="E-mail">Mail<br> 
+						<input type="checkbox" name="communicationMode" value="Mobile">Mobile<br>
+						<input type="checkbox" name="communicationMode" value="WhatsApp">WhatsApp<br>
+						<input type="checkbox" name="communicationMode" value="Post">Post<br>
+					</td>
+				</tr>
+				<tr>
+					<td>Graduation: </td>
+					<td><select name="graduation">
+							<!-- <option value="" disabled selected hidden>Please Choose</option> -->
+							<option style="display: none">Please choose</option>
+							<option value="B.Tech">B.Tech</option>
+							<option value="Bsc">Bsc</option>
+							<option value="BE.Communication">BE.Communication</option>
+							<option value="BE.ComputerScience">BE.ComputerScience</option>
+							<option value="BE.Civil">BE.Civil</option>
+							<option value="BE.Electrical">BE.Electrical</option>
+							<option value="BE.Instrumentation">BE.Instrumentation</option>
+					</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Describe About Yourself:</td>
+					<td>
+				<textarea name="description" rows="4" cols="60"></textarea>
+					</td></tr>
+			</table>
+			<table>
+				<input type="submit" value="SUBMIT">
+				<p>
+					to return to previous page <a href='indexPage.html'>Return</a>
+				</p>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Index Page</title>
+
+<script type="text/javascript">
+
+	    function hello() {
+		document.write("hello World");
+	}
+</script>
+
+</head>
+<body onload="hello()">
+
+	<!-- <script type="text/javascript">
+		document.write("hello World");
+	</script> -->
+
+</body>
+</html>

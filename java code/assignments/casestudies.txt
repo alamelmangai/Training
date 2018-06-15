@@ -1,0 +1,20 @@
+public class Associate(){
+	private int associateID,yearlyInvestmentUnder80C;
+	private String firstName,lastName,department,designation,pancard,emailId;
+	
+	public void setAssocisteID(int){
+		this.associateID=associateID;
+	}
+	public int getAssociateID(){
+		return this.associateID;
+	}
+	
+	public void setYearlyInvestmentUnder80C(int){
+		this.yearlyInvestmentUnder80C=yearlyInvestmentUnder80C;
+	}
+	public int getYearlyInvestmentUnder80C(){
+		return this.yearlyInvestmentUnder80C;
+	}
+	
+
+}  

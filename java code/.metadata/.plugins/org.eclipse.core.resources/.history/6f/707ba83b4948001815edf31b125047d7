@@ -1,0 +1,141 @@
+package com.cg.banking.daoservices;
+import java.util.Arrays;
+import com.cg.banking.beans.Account;
+import com.cg.banking.beans.Customer;
+import com.cg.banking.beans.Transaction;
+
+public class BankingDAOServicesImpl implements BankingDAOServices{
+	private static Customer[] customerList = new Customer[10];
+	private static int CUSTOMER_ID_COUNTER=100;
+	private static int CUSTOMER_IDX_COUNTER=0;
+	private int pinNumber=1111;
+
+	@Override
+	public int insertCustomer(Customer customer) {
+		if(CUSTOMER_IDX_COUNTER>70*customerList.length/100){
+			Customer[] tempList;
+			tempList=Arrays.copyOf(customerList, 10+customerList.length);
+			customerList=tempList;
+		}
+		customer.setCustomerId(CUSTOMER_IDX_COUNTER++);
+		customerList[CUSTOMER_IDX_COUNTER++]=customer;
+
+		return customer.getCustomerId();
+	}
+
+	@Override
+	public long insertAccount(int customerId, Account account) {
+		for(int i=0;i<customerList.length;i++) {
+			if(customerList[i]!=null&&customerList[i].getCustomerId()==customerId) {
+				customerList[i].getAccounts()[customerList[i].getAccountNoIdxCounter()]=account;
+				customerList[i].getAccounts()[customerList[i].getAccountNoIdxCounter()].setAccountNo(customerList[i].getAccountNoCounter());
+				long aNocounter =customerList[i].getAccountNoCounter();
+				aNocounter++;
+				int aidxcounter=customerList[i].getAccountNoIdxCounter();
+				aidxcounter++;
+				return (aNocounter-1);
+			}
+		}
+		return 0;
+	}
+
+	@Override
+	public boolean updateAccount(int customerId, Account account) {
+		for(int i=0;i<customerList.length;i++)
+			for(int j=0;j<customerList[i].getAccounts().length;j++)
+				if(customerList[i]!=null&&customerList[i].getCustomerId()==customerId
+				&&customerList[i].getAccounts()[j]!=null&&customerList[i].getAccounts()[j].getAccountNo()==account.getAccountNo()){
+					customerList[i].getAccounts()[customerList[i].getAccountNoIdxCounter()]=account;
+					return true;
+				}
+		return false;
+	}
+
+	@Override
+	public int generatePin(int customerId, Account account) {
+		for(int i=0;i<customerList.length;i++) {
+			for(int j=0;j<customerList[i].getAccounts().length;j++) {
+				if(customerList[i]!=null&&customerList[i].getCustomerId()==customerId
+						&&customerList[i].getAccounts()[j]!=null&&customerList[i].getAccounts()[j].getAccountNo()==account.getAccountNo()){
+					customerList[i].getAccounts()[j].setPinNumber(pinNumber++);
+				}
+			}
+		}
+		return 0;
+	}
+
+	@Override
+	public boolean insertTransaction(int customerId, long accountNo, Transaction transaction) {
+		for(int i=0;i<customerList.length;i++)
+			for(int j=0;j<customerList[i].getAccounts().length;j++)
+				if(customerList[i]!=null&&customerList[i].getCustomerId()==customerId
+				&&customerList[i].getAccounts()[j]!=null&&customerList[i].getAccounts()[j].getAccountNo()==accountNo()){
+					customerList[i].getAccounts()[j].getTransactions()[customerList[i].getAccounts()[j].getTransactionIdxCounter()]=transaction;
+					customerList[i].getAccounts()[j].getTransactions()[customerList[i].getAccounts()[j].getTransactionIdxCounter()].setTransactionId(customerList[i].getAccounts()[j].getTransactionIdCounter());
+					int tidcounter=customerList[i].getAccounts()[j].getTransactionIdCounter();
+					tidcounter++;
+					int tidxcounter=customerList[i].getAccounts()[j].getTransactionIdCounter();
+					tidxcounter++;
+					return true;
+				}	
+
+		return false;
+	}
+
+
+	@Override
+	public boolean deleteCustomer(int customerId) {
+		for(int i=0;i<customerList.length;i++) 
+			if(customerList[i]!=null&&customerId==customerList[i].getCustomerId()) {
+				customerList[i]=null;
+				return true;	
+			}
+		return false;
+	}
+
+	@Override
+	public boolean deleteAccount(int customerId, long accountNo) {
+		for(int i=0;i<customerList.length;i++)
+			for(int j=0;j<customerList[i].getAccounts().length;j++)
+				if(customerList[i]!=null&&customerList[i].getCustomerId()==customerId
+				&&customerList[i].getAccounts()[j]!=null&&customerList[i].getAccounts()[j].getAccountNo()==account.getAccountNo()){
+					customerList[i].getAccounts()[customerList[i].getAccountNoIdxCounter()]=null;
+					return true;
+				}
+		return false;
+	}
+
+	@Override
+	public Customer getCustomer(int customerId) {
+		for(int i=0;i<customerList.length;i++) {
+			if(customerList[i]!=null&&customerList[i].getCustomerId()==customerId) 
+				return customerList[i];
+		}
+		return null;
+	}
+
+	@Override
+	public Account getAccount(int customerId, long accountNo) {
+		for(int i=0;i<customerList.length;i++)
+			for(int j=0;j<customerList[i].getAccounts().length;j++)
+				if(customerList[i]!=null&&customerList[i].getCustomerId()==customerId
+				&&customerList[i].getAccounts()[j]!=null&&customerList[i].getAccounts()[j].getAccountNo()==account.getAccountNo())
+					return customerList[i].getAccounts()[customerList[i].getAccountNoIdxCounter()];
+	}
+
+	@Override
+	public Customer[] getCustomers() {
+		return null;
+	}
+
+	@Override
+	public Account[] getAccounts(int customerId) {
+		return null;
+	}
+
+	@Override
+	public Transaction[] getTransactions(int customerId, long accountNo) {
+		return null;
+	}
+
+}
